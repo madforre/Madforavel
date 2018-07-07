@@ -1,0 +1,113 @@
+body{
+    // background : #222222 !important;
+    // color : #eee !important;
+    background : rgb(236, 245, 237);
+    padding-top : 1.2rem;
+}
+
+// main
+
+main {
+    max-width : 1280px;
+    width : 85%;
+    margin : 0 auto;
+    margin-top : 5rem;
+    padding : 20rem auto;
+}
+
+main p a{
+    font-size : 0.2rem;
+}
+
+.jumbotron {
+    background : rgb(255, 255, 255);
+}
+
+
+// nav
+
+nav {
+    font-family: 'Nanum Gothic';
+}
+
+// posts
+
+.posts_wrap {
+    max-width : 1280px;
+    margin : 0 auto;
+}
+
+.posts_wrap>.posts{
+    box-sizing: border-box;
+}
+
+.posts .card.post.light{
+    height : 28rem;
+}
+
+img.card-img-top{
+   width : 90%;
+   max-height : 15.5rem;
+   position : absolute;
+   margin: 0 auto;
+   left : 0;
+   right : 0;
+}
+
+.posts .card-body{
+    width : 90%;
+    position : absolute;
+    margin : 0 auto;
+    left : 0;
+    right : 0;
+    bottom : 0.2rem;
+    
+}
+
+.posts {
+    float : left;
+}
+
+.post {
+    box-sizing: border-box;
+    margin : 0.3rem;
+    padding : 1rem 0;
+}
+
+@media screen and (max-width:720px) {
+
+    .posts{
+        width : 100%;
+    }
+
+    .card.post.light {
+        margin : 0.7rem auto;
+    }
+
+}
+
+// post
+
+.post_bottom {
+    box-sizing: border-box;
+    height : auto;
+    margin : 0.2rem auto;
+    padding-top : 2rem;
+}
+
+.right_side {
+    float : right;
+    margin : 0 0.2rem;
+    overflow: hidden;
+}
+
+.post_img{
+    display: block;
+    width : 60%;
+    min-width : 15rem;
+    margin : 0 auto;
+}
+
+.post_body{
+    
+}

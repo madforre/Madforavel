@@ -1,0 +1,24 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Custom CSS
+
+@import "custom";
+
+// 확장자를 포함시킬 필요가 없다.
+// _(언더스코어)가 그 파일이 include 되었다는 것을 알려주기 때문이다.
+
+

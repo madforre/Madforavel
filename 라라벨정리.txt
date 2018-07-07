@@ -1,0 +1,718 @@
+Protocol 이란?
+
+    - 프로토콜(Protocol)은 컴퓨터나 네트워크 장비가 서로 통신하기 위해 미리 정해 놓은 약속, 규약 -
+
+    사람과 사람이 통신할때 서로 이해할 수 있는 언어, 공용된 언어를 사용해 전세계 모든 사람과 대화 할수 있다라고 
+    하면, 컴퓨터와 컴퓨터도 서로 이해 할 수 있는 언어, 공용된 언어를 사용 해야 한다는 것인데
+    이 것이 바로 프로토콜(Protocol) 입니다.
+
+    프로토콜은 원래 외교상의 언어로써 의례나 국가간에 약속을 의미하며, 통신에서는 어떤 시스템이 다른 시스템과
+    통신을 원활하게 수용하도록 해주는 통신 규약, 약속 이라 보시면 됩니다.
+
+    대표적으로 인터넷을 할 때 사용되는 프로토콜은 TCP/IP (Transmission Control Protocol / Internet Protocol)가 있습니다.
+
+    TCP/IP 는 Transmission Control Protocol / Internet Protocol 의 약자로써 컴퓨터와 컴퓨터가 통신 회선 등으로
+    연결 하기 위한 통신 규약입니다.
+    그외 HTTP, ARP, ICMP, SNMP, SMTP, POP, FTP, TFTP, DHCP 등이 프로토콜의 종류입니다.
+    
+    출처: http://mindnet.tistory.com/entry/네트워크-쉽게-이해하기-9편-프로토콜-이란-Protocol-이란-무엇인가 [Mind Net]
+
+HTTP와 REST
+
+    REST에 대한 복잡한 설명이 많은데, 다음과 같이 요약할 수 있다.
+    URI를 이용해서 제어할 자원을 명시하고
+    HTTP를 이용해서 제어명령을 내린다.
+    원격에 명령을 내리는 것은 결국 원격에 있는 자원을 제어하겠다라는 의미다. 
+    REST는 원격에 있는 자원을 찾기 위해서 URI를 사용한다. 자원을 찾았다면, 
+    이제 자원에 대한 명령을 내려야 하는데, 자원에 대한 명령의 범주는 결국 CRUD로 압축할 수 있다.
+
+    C : Create. 자원을 생성
+    R : Read. 자원의 정보를 읽기
+    U : Update. 자원의 정보를 업데이트
+    D : Delete. 자원의 삭제
+
+    각각 SQL언어의 Insert, Select, Update, Delete에 대응한다.
+    HTTP는 CRUD를 위한 메서드를 이미 모두 포함하고 있다.
+
+    C : POST
+    R : GET
+    U : UPDATE
+    D : DELETE
+    
+    CRUD를 명시해서 자원을 제어하는게 가능하다는 얘기가 되겠다.
+
+    추가적으로 다른 메소드가 있지만, 보안상 문제때문에 사용하지 않는다고 한다.
+
+    * Resource 이름은 복수를 사용하고, 일관된 대소문자 규칙을 적용할 것을 권장한다.
+    
+        ex) article -> articles
+            tag -> tags
+
+-------------------------
+
+XAMPP 개발용 도메인 설정
+
+1.  C:/xampp/apache/conf/extra -> httpd-vhost.conf 파일 수정
+
+    NameVirtualHost *:80,
+
+    <VirtualHost *:80>
+     DocumentRoot "프로젝트경로"
+     ServerName localhost
+    </VirtualHost>
+
+    <VirtualHost *:80>
+     DocumentRoot "프로젝트경로"
+     ServerName 원하는서버도메인이름
+    </VirtualHost>
+
+    코드 추가
+
+2. C:\Windows\System32\drivers\etc\hosts
+
+    # XAMPP ServerNames (My Setting)
+        127.0.0.1 jgh.dev
+
+    코드 추가
+
+익스플로러에서는 추가한 로컬서버이름이 적용이 되나,
+Chrome과 Firefox에서는 HSTS 때문에 적용이 안된다.
+즉 HSTS 설정을 따로 해주어야 한다.(나중에 기회가 되면 알아보자)
+
+HSTS (HTTP Strict Transport Security)란?
+
+HTTPS를 클라이언트의 브라우저에서 강제화 하여 최초 접속시 부터 HTTPS로 접속 할 수 있도록 유도하기 위해 만들어졌다고 볼 수 있습니다.
+HTTPS 를 이용한 웹사이트를 운영중이라면 필수로 설정하여 운영하도록 합시다!
+
+--------------------------------------------
+
+routes/api.php?
+
+Create a Restful API, we can bring in that middleware here,
+and anything we put here in API /(slahs) whatever,
+but the main route files gonna be this -> routes/web.php file.
+
+
+--------------------------------
+
+객체 지향 디자인의 5원칙(SOLID 원칙)
+
+https://wkdtjsgur100.github.io/solid-principle/
+
+--------------------------------
+
+서비스 프로바이더?
+
+서비스 프로바이더는 라라벨 애플리케이션의 부팅(부트스트래핑)의 가장 핵심이라고 할 수 있습니다. 
+여러분의 애플리케이션과 마찬가지로 라라벨의 모든 코어 서비스는 서비스 프로바이더를 통해서 부트스트래핑 됩니다.
+그런데 "부트스트래핑" 이란 과연 무엇을 의미하는 것일까요? 일반적으로는 서비스 컨테이너에 바인딩을 등록하는 것을 포함해서 이벤트 리스너, 
+미들웨어 그리고 라우트등을 등록 하는 것을 의미합니다. 서비스 프로바이더는 애플리케이션 구성의 핵심입니다.
+
+라라벨에 포함되어 있는 config/app.php 파일을 열어 본다면 providers 배열을 볼 수 있을 것입니다. 
+배열 안에 있는 모든 서비스 프로바이더 클래스가 애플리케이션에 로드됩니다. 
+물론, 대부분의 프로바이더는 "지연된" 프로바이더입니다. 이 말은 모든 요청에 대해서 반드시 로드되지 않고 실제로 필요할 때에 로드 된다는 것을 의미합니다.
+
+서비스 컨테이너(=~이름표가 달린 서랍장)에 서비스(=~이미 만든 객체 또는 객체를 만들 수 있는 레시피)를 등록하는 것이 서비스 프로바이더입니다. 
+라라벨의 파사드는 서비스 컨테이너에 등록된 객체에 접근하는 도구입니다.
+
+----------------------------------
+
+라라벨 패키지 설치법
+
+라라벨에 패키지를 설치할 때 마다 config/app.php에서 프로바이더에 등록해주어야 한다.
+
+----------------------------------
+
+.env ?
+
+Databases Credential 관련파일이다.
+데이터베이스 자격증명, 데이터베이스 인증정보를 담고 있는 파일이라고 생각하자.
+
+* it also holds the app name you can see by default (ex - it's laravel)
+
+----------------------------------
+
+tests 폴더?
+
+Unit tests 관련 폴더이다.
+
+--------------------------------
+
+public 폴더의 css, js 파일들은 minified 되어잇다.
+
+또한 resource의 assets 폴더로부터 컴파일되어있다.
+
+compile,minify 하기 전 파일은 resources/assets 폴더에 위치한다.
+
+* 라라벨 믹스를 통해 웹팩으로 컴파일이 가능하다!
+
+--------------------------------
+
+라라벨 route/web.php 기본 코드
+
+
+    라우터로 들어올 경우 뷰 페이지로 이동해주기
+
+        Route::get('/about', function(){
+            return view('pages.about');
+        }); 
+
+            view 메소드 안에서의 문자열은 resources/views/about.blade.php 
+            경로인 뷰 페이지를 의미한다. 경로이다.
+            pages.about 말고 pages/about 도 가능
+
+    라우터로 파라미터 전달해주기
+
+        Route::get('/users/{id}/{name}', function($id, $name){
+            return 'This is user ' .$name.' with an id of '.$id;
+        });
+
+----------------------------
+
+Laravel Route 사용법
+
+1. Create a controller ( CMD php artisan make:controller Name 이용 )
+2. set the route (to go to a certain controller function)
+3. and then return the view
+
+* 컨트롤러는 대문자로 시작하도록 하자.
+
+----------------------------
+
+Laravel Controller 만들기
+
+    - cmd창에서 아래 코드를 입력
+
+        php artisan make:controller 컨트롤러이름
+
+
+아래는 컨트롤러 이름을 PagesController로 생성한 PagesController의 구조이다.
+
+    <?php
+
+    namespace App\Http\Controllers; // added the name space
+
+    use Illuminate\Http\Request; // brings in the request library
+                                 // so that we can handle requests
+
+    class PagesController extends Controller
+    {
+        // creates a controller called pages controller
+        // and then extends the core the standard controller.
+        // any controller you create should  extend this.
+    }
+
+-------------------------------
+
+라우트에서 컨트롤러 메소드 사용하기
+
+    - 메소드의 이름이 index인 메소드 사용하기
+
+        Route::get('/', 'PagesController@index');
+
+클로저 부분은 컨트롤러에 빼주도록 하자. (유지보수와 정리를 위해)
+
+---------------------------------
+
+뷰에서 config 메소드 사용하기
+
+    ex) <title>{{config('key', '키가 없을 경우 사용할 이름')}}</title>
+
+-----------------------------------
+
+Visual Code에서
+
+ctrl + p 누르고 ext laravel-blade 치고
+
+Laravel Blade Snippets 깔아주자 유용! (Highlighting for blade syntax)
+
+--------------------------------------
+
+블레이드 템플릿 Blade Template
+
+    - 레이아웃 상속
+
+        @extends('상속 받을 레이아웃')
+
+        ex ) @extends('layouts.app')
+
+    - 섹션 양도
+
+        @yield('양도할 섹션 이름')
+
+    - 양도될 섹션
+
+        @section('양도될 섹션 이름')
+
+        @endsection('양도될 섹션의 끝')
+
+    - 뷰에서의 if 조건문 시작과 종료
+
+        @if
+
+        @endif
+
+    - 뷰에서의 foreach문 통해 배열 풀어주기
+        
+    ex) @foreach($services as $service)
+
+
+--------------------------------------
+
+컨트롤러에서 뷰에 변수와 그 값을 전달하는 방법
+
+
+1.
+
+compact() 메소드
+
+compact('변수명') // 변수와 그 변수의 값을 포함하는 배열을 만든다.
+                  // 연관배열 형태로 만듬 "key(변수명)"=>"value(변수값)"
+                  // 변수명을 쉼표로 구분하여 여러개 써주면 각 변수들은
+                  // 연관배열의 키가 되고 변수 값들은 값이 된다.
+
+사용 예
+
+    $title = Welcome Hou
+    return view('pages.index', compact('뷰에 전달할 변수명과 그 값'));
+
+
+2.
+
+with() 메소드
+
+    arrow와 함께 사용하며 뷰에 데이터를 전달한다.
+    
+        with('뷰에서 부를 변수이름', '실제 변수 이름')
+
+사용 예
+
+    $title = Welcome Hou
+    return view('pages.index')->with('title', $title);
+
+---------------------------------------
+
+라라벨을 부트스트랩을 기본으로 포함하고 있다.
+
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+이런식으로 써주면 public asset 폴더에 있는 css 폴더의
+app.css 파일을 사용할 수 있다.
+
+즉 부트스트랩을 사용하고 있는 기본 Default CSS 파일이 적용된다.
+(이미 전부 컴파일된 상태임)
+
+커스텀 css파일을 대체하고 싶으면 app.css를 대체하면 된다.
+
+컴파일하기 위해선 NPM 설치가 필요하다.
+
+또한 package.json에 있는 의존성 파일들을 사용하기 위해서는
+
+역시 NPM 설치가 필요하다.
+
+    npm install
+
+public에는 컴파일된 버젼들이 위치한다.
+
+--------------------------------------------
+
+CMD창에 npm run dev 치면 resources/assets 에 있는 친구들이 컴파일된다.
+
+npm run watch 은 지속적으로 파일을 감시한다.
+scss가 변하면 자동으로 컴파일하여 적용되게 한다.
+
+
+--------------------------------------------
+
+sass 폴더 안에서의 scss 를 app.scss 에 포함시키기
+
+    resources/assets/sass 폴더 안에 _custom.scss 파일을 만들자
+    그리고 app.scss에서 @import "custom"; 으로 포함관계를 밝혀주자.
+
+    * 확장자를 포함시킬 필요가 없다.
+    _(언더스코어)가 그 파일이 include 되었다는 것을 알려주기 때문이다.
+
+---------------------------------------------
+
+resources 폴더에 있는 것들을 바꾸고, 컴파일 시키면서 사용하자.
+
+----------------------------------------------
+
+CMD창으로 컨트롤러 만들기
+
+    php artisan make:controller 컨트롤러 이름
+
+CMD창으로 모델 만들기
+
+    php artisan make:model -m 
+        ( -m 옵션으로 모델을 만들 때 마이그레이션도 같이 만들어주었다.)
+
+-------------------------------------------------
+
+DB 마이그레이션할때 에러 방지하기(MariaDB 관련으로 추정)
+
+1.  app/Http/Providers/AppServiceProvider.php 에서
+
+        use Illuminate\Support\Facades\Schema;를 추가(스키마와 관련된 파사드 라이브러리)
+
+2.  class AppServiceProvider의 boot 메소드에 
+
+        Schema::defaultStringLength(191); 를 추가해주자.
+
+-------------------------------------------------
+
+php artisan tinker 에서
+
+Eloquent ORM을 실험해보자! 
+
+모델에 접근하여 함수를 사용하기
+
+    - App\모델명::함수명
+
+    ex) App\Post::count()
+
+create a new instance and Set a variable
+
+    $post = new App\Post();
+
+    $post->title = 'Post One';
+    $post->body = 'This is the post body';
+    $post->save();
+    
+    true 리턴하면 데이터가 들어간 것이다.
+
+----------------------------------------------
+
+실제로 사용되는 리소스 함수들, 리소스 메소드들이다.
+
+    index(listings of all the posts)
+    create(create form)
+    store(submitting it to the model to the database)
+    edit(Edit form)
+    update()
+    show(Single Post)
+    destory(deleting)
+
+리소스 컨트롤러 만드는 법
+
+    php artisan make:controller PostsController --resources
+
+리소스 컨트롤러의 기본 파라미터들에 대해 알아보기
+
+* store의 파라미터 $request는 제출하는 폼에서 변수를 잡아낼 때 사용한다.
+    (유효성 검사 등등 활용가능)
+
+* show의 파라미터 $id는 어떤 포스트를 보여줄 것인지 알아야 하므로 필요하다.
+    edit도 어떤 id에 해당하는 포스트를 수정해야 하므로 $id 파라미터가 필요하다.
+
+* update는 폼을 제출해야하고 어디에 있는지 알아야 하므로
+    $request와 $id파라미터가 둘다 필요하다.
+
+* destory는 ID가 필요하다. 삭제하기 위해.
+
+
+리소스컨트롤러 사용법
+
+    1. routes/web.php 파일에 아래 코드 추가
+    
+        Route::resource('사용할URL', '사용할 리소스 컨트롤러');
+
+        Route::resource('posts', 'PostsController');
+
+    2. 라우트 설정되었는지 cmd창에서 확인
+
+        php artisan route:list
+
+    3. 컨트롤러에서 모델을 가져와 상호작용하고 뷰와 연결하기
+
+        - 컨트롤러에 use App\모델명; 을 명시해준다.
+
+        public function index()
+        {
+            return Post::all();
+            return view('posts.index');
+        }
+        ex) Post:
+
+
+----------------------------------
+
+우리는 모델에서 많은 것을 작성할 필요가 없다.
+Illuminate\Databases\Eloquent\Model 의
+모델 클래스로부터 많은 메소드들을 상속을 많이 받고 있기 때문!
+
+    php artisan tinker 창에서 아래 코드들을 쳐보자.
+
+    Post::all();
+    Post::count();
+
+    우리는 지금 상속받고 있는 메소드를 활용한 것이다.
+
+-------------------------------------
+
+모델 사용법 및 Default 속성
+
+모델의 Default Property
+
+    // Table Name (기본값으로 복수형이 들어가지만 바꿔줄 수도 있다.)
+    protected $table = 'posts'
+    
+    // Primary Key
+    public $primaryKey = 'id';
+
+    // Timestamps
+    public $timestamps = true; 
+        // 기본 값이 true로 되어있다. 
+        // created_at updated_at 필드를 원하지 않는다면 false로 설정하자.
+
+---------------------------------------
+
+리소스 컨트롤러에서 모델을 가져오고 싶다?
+
+    use App\모델명 써주자.
+
+내림차순으로 정렬하고 싶다면? (점점작아짐 ex) 10->1)
+
+예) asc 를 reverse 한 desc
+
+    $posts = Post::orderby('컬럼','desc')->get();
+    return view('posts.index')->with('posts', $posts);
+
+    orderby() 메소드를 이용하여 모델의 컬럼을 선택, 정렬해준다.
+    첫번째 파라미터는 모델의 컬럼, 두번째 파라미터는 원하는 정렬차순이다.
+    그 후 view에 변수를 바인딩하여 전달해주자.
+
+오름차순으로 정리하고 싶다면? (점점커짐 ex) 1->10 )
+
+예)
+
+    $posts = Post::orderby('컬럼','asc')->get();
+    return view('posts.index')->with('뷰에바인딩될변수명', $posts);
+
+    $posts는 컨트롤러에서 사용된 변수를 의미한다.
+    컨트롤러에서 사용한 변수를 전달하려면 뷰에 바인딩을 해주어야 한다.
+
+* where() 메소드를 사용하여 이런식으로 찾아줄 수도 있다.
+
+$post = Post::where('id','2')->get();
+
+--------------------------------------------
+
+컬렉션
+
+all과 get 같이 여러개의 결과를 가져오는 Eloquent 메소드의 경우 Illuminate\Database\Eloquent\Collection 인스턴스가 반환됩니다. 
+Collection 클래스는 Eloquent 결과에 사용할 수 있는 다양한 메소드들을 제공합니다:
+
+* Eloquent의 all 메소드는 모델의 테이블에서 모든 결과를 반환할 것입니다.
+
+각 Eloquent 모델은 쿼리 빌더의 역할을 하기 때문에 쿼리에 다양한 조건들을 추가할 수 있고, 마지막에 get 메소드를 사용하여 결과를 조회할 수 있습니다:
+    (애초에 where 메소드와 get 메소드는 쿼리빌더의 메소드였다. 둘이 궁합이 잘맞는다. all은 컬랙션에서 추가된 메소드이다.)
+
+ex) $flights = App\Flight::where('active', 1)
+               ->orderBy('name', 'desc')
+               ->take(10)
+               ->get();
+
+* Eloquent 모델은 모두가 쿼리 빌더이기 때문에, 쿼리 빌더에서 제공되는 모든 메소드를 살펴 보시기 바랍니다. 여기의 어떠한 메소드라도 Eloquent 쿼리에서 사용할 수 있습니다.
+
+-------------------------------------------
+
+이제 쿼리빌더에서 제공하는 메소드를 살펴보자.
+
+* Where 절
+
+    - 간단한 Where 절
+
+    쿼리 빌더 인스턴스에서 where 절을 쿼리에 추가하기 위해서는 where 메소드를 사용할 수 있습니다. 
+    가장 기본적인 where 메소드 호출 방법에는 3가지 인자가 필요합니다. 첫번째 인자는 컬럼의 이름입니다. 
+    두번째 인자는 데이터베이스가 지원하는 연산자입니다. 마지막으로, 세번째 인자는 컬럼에 대해 비교하는 값입니다.
+
+
+    - 예제
+
+    다음과 같이 "votes" 컬럼이 100과 일치하는 값을 가진 쿼리를 수행합니다:
+
+        $users = DB::table('users')->where('votes', '=', 100)->get(); // 두번째 argument에 다른 연산자를 쓰는 것도 가능합니다.
+
+    보다 편리하게 사용하기 위해서, 컬럼이 주어진 값과 동일한가를 확인하고자 한다면, where 메소드의 두번째 인자로 바로 값을 전달할 수도 있습니다.
+
+        $users = DB::table('users')->where('votes', 100)->get();
+
+
+* 그 밖의 쿼리빌더 메소드로는 어떤 것들이 있을까?
+
+    - orderBy()
+    
+        orderBy() 정렬 메소드도 쿼리빌더의 메소드이다.
+
+        이 메소드의 첫번째 인자는 정렬하고자 하는 Column 이며,
+        두번째 인자는 asc 또는 desc의 정렬 방식을 제어하는 인자가 됩니다.
+
+    - orWhere()
+    
+        Where 절의 Or 구문인 orWhere()
+        
+        쿼리에 or 절을 추가하는 것과 같이 where 제약에 더해서 체이닝 형태로 사용할 수 있습니다. 
+        orWhere 메소드는 where 메소드와 동일한 인자를 전달 받습니다.
+
+        예) $users = DB::table('users')
+                    ->where('votes', '>', 100)
+                    ->orWhere('name', 'John')
+                    ->get();
+
+-------------------------------------------
+
+Not Using Eloquent (엘로퀀트를 사용하지 않고 쿼리문 자체를 이용하고 싶은경우) 
+    
+    * 쿼리빌더는 PDO 파라미터 바인딩을 사용하여 SQL injection 공격 방지합니다.
+
+- if you want to just use SQL queries for that we can bring in the DB library by just doing in
+
+        use DB;
+
+    * 컨트롤러의 상단에 use DB; 를 써주었으면 이제 쿼리문사용이 가능하다.
+      쿼리빌더의 select 문을 이용하여 쿼리문을 사용해보자.
+
+        example) $posts = DB::select('SELECT * FROM posts');
+                 return view('posts.index')->with('posts',$posts);
+
+
+    * Laravel 쿼리 빌더는 PDO 매개 변수 바인딩을 통해 SQL 주입 공격으로부터 응용 프로그램을 보호합니다. 
+      바인딩으로 전달되는 문자열을 치료할 필요가 없습니다.
+
+------------------------------------------
+    
+쿼리빌더의 또다른 메소드?
+
+    건너 뛰기 / 가져 가기
+    
+        쿼리에서 반환 된 결과의 수를 제한하거나 쿼리에서 지정된 수의 결과를 건너 뛰려면 skip및 take메서드를 사용할 수 있습니다 .
+
+    예제
+    
+        $users = DB::table('users')->skip(10)->take(5)->get(); // id순으로 10개 스킵하고 5개 가져온다. 
+            
+            * orderBy 메소드를 스킵 앞에 추가 가능
+
+                ex)
+
+                    orderBy('name', 'desc')->skip(5)->take(1) ? name컬럼을 내림차순으로 정렬하고, 5개를 생략하고 하나를 가져온다.
+
+    또는 limitand offset메소드를 사용할 수도 있습니다 .
+
+        $users = DB::table('users')
+                ->offset(10)
+                ->limit(5)
+                ->get();
+
+--------------------------------------------
+
+컨트롤러에서 바인딩하여 뷰에 전달된 모델 변수 $users가 있다고 하자.
+
+    ex) $users = User::where('votes', '>', 100)->paginate(15);
+
+    뷰에서 아래처럼 써주자.
+    
+        {{$users->links()}} 
+
+이처럼 Blade(template)를 사용하여 결과를 표시하고 페이지 링크를 렌더링 할 수 있다.
+이 links방법으로 생성 된 HTML은 부트 스트랩 CSS 프레임 워크 와 호환 된다.
+
+--------------------------------------------
+
+Laravel CSRF Protection
+
+    CSRF 토큰을 추가하여 크로스 사이트 요청 위조를 방어해주자.
+    이러한 CSRF 토큰을 이용한 Protection은
+    사람들이 다른 장소에서 폼 양식을 제출하는 것을 방어해준다.
+
+------------------------------------------------
+
+REST API
+
+HTTP의 URL로 정의된 리소스를 HTTP Method + payload 로 어떻게든 하게끔하는 정의된 API를 REST API라고 한다.
+    
+    P.S
+
+        payload는 내가 비용을 지불하고자 하는 적재량이라는 뜻인데,
+        여기서는 관심있는 것만 콕 찝은, 그걸 부르는 단어다.
+        즉 실린 것중에 관심있는 것을 의미.
+
+REST API? RESTFUL API?
+
+    자세히 읽어보려면 여기를 참조
+
+    http://blog.naver.com/PostView.nhn?blogId=complusblog&logNo=220986337770
+
+------------------------------------------------
+
+form 전송하기
+
+    form태그의 method를 post로 해주고 뷰에서 폼 태그 안에 {{ csrf_field() }} 를 써주어 같이 전송하도록 하자.
+    블레이드 탬플릿이 지원하는 CSRF 방지 토큰이 포함되있는 input 양식이다.
+
+컨트롤러의 store 메소드에 dd(request()->all()); 를 써주면?
+
+    뷰에서 폼 요청이 제대로 들어갔는지 확인할 수 있다. 요청한 폼 배열을 보여준다.
+
+    return 123; 이런 식으로 써줘도 폼 요청이 들어가는거 자체는 확인 가능.
+
+------------------------------------------------
+
+* 리소서 컨트롤러 생성하기
+
+    php artisan make:controller 컨트롤러 이름 -r 
+
+        (여기서 -r 은 리소스 컨트롤러 생성 옵션이다.)
+
+* 글을 작성하고 싶을 때? (CREATE)
+
+    로직 : HTTP 리소스를 이용하여 create 페이지에서 posts 로 폼 전송
+            이 때, posts 경로로 POST방식 폼이 들어온다면 리소스 컨트롤러의 store 메소드가
+            동작하게 설정되어 있다.
+
+* 글을 수정하고 싶을 때? (UPDATE)
+
+    로직 : HTTP 리소스를 이용하여 edit 페이지에서 update 로 폼 전송
+
+        1. csrf 토큰을 포함하여야 한다.
+
+        2. 폼 요청은 POST로 하지만, PUT 방식으로 가는 것처럼 스푸핑(속임) 해주어야 하므로
+           @method('put') 도 포함시켜야 한다.
+
+------------------------------------------------
+
+* 라라벨에서 제공하는 User Authentication
+
+    CMD창에 아래 명령어를 입력해보자.
+
+        php artisan make:Auth
+
+------------------------------------------------
+
+* 유효성 검사 참고 (제목검사나 내용검사, 그리고 이미지 업로드시 검사)
+
+$this->validate($request, [
+    'title' => 'required',
+    'body' => 'required',
+    'cover_image' => 'image|nullable|max:1999' 
+    // 이미지형식 (GIF, JPEG, JPG, PNG인지 확인하고, 필수가 아니므로 nullable 을 통해 
+    // 업로드를 선택으로 만들어주고 2MB 미만의 파일을 올리도록 검사해준다.
+    )
+])
+
+------------------------------------------------
+
+* 파일 업로드 참고
+
+$request->hasFile('cover_image') ?
+
+실제로 업로드되었는지, 사람이 실제로 클릭하고 파일을 골랐는지 확인한다.
+
+파일저장은 리소스 컨트롤러에서 store에 써준다.
+
+------------------------------------------------
+
+php artisan storage:link
+
+    storage/app/public 에 넣는 것들은 public/storage 에 똑같이 들어가도록 설정해준다.
