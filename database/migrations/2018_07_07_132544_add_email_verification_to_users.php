@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\User;
 
-class AddCoverImageToPosts extends Migration
+class AddEmailVerificationToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +14,9 @@ class AddCoverImageToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function($table){
-            $table->string('cover_image');
+        Schema::table('users', function ($table){
+            $table->string('activation_code')->nullable();
+            $table->integer('status')->default(0);
         });
     }
 
@@ -25,8 +27,9 @@ class AddCoverImageToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function($table){
-            $table->dropColumn('cover_image');
+        Schema::table('users', function($table){
+            $table->dropColumn('activation_code');
+            $table->dropColumn('status');
         });
     }
 }

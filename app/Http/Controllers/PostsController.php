@@ -37,6 +37,12 @@ class PostsController extends Controller
      */
     public function create()
     {
+        // Check Activation_code
+
+        if(auth()->user()->status == 0){
+            return redirect('/posts')->with('error', '이메일 인증이 필요한 서비스입니다.');
+        }
+        
         return view('posts.create');
     }
 

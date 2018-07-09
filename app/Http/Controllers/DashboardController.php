@@ -29,3 +29,4 @@ class DashboardController extends Controller
         return view('dashboard')->with('posts', $user->posts); // 모델에서 관계를 추가해주면 $user->posts 처럼 써줄 수 있다.
     }
 }
+

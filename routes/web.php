@@ -29,3 +29,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/verify-user/{activation_code}', 'Auth\RegisterController@verification')->name('activate.code');

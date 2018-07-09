@@ -13,10 +13,10 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
-
+    
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'secret' => env('MAILGUN_KEY'),
     ],
 
     'ses' => [

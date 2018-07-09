@@ -10443,8 +10443,9 @@ nav {
 }
 
 .posts_wrap {
-  max-width: 1280px;
+  width: 97%;
   margin: 0 auto;
+  padding-left: 2.5%;
 }
 
 .posts_wrap > .posts {
