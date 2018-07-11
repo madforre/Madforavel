@@ -801,7 +801,15 @@ Notification
 
 ---------------------------------------------------
 
-Http 미들웨어의 redirect에서
+배포시 AWS에서 설정파일 설정하기
+
+    1.  /etc/apache2/apache2.conf 를 열어주자.
+
+        /var/www 에 해당하는 디렉토리 설정에서 Allowoverride None 을 Allowoverride All 로 바꿔주자.
+        
+        Require all granted 도 되어있는지 확인해주자.
 
 
-리다이렉트 되는거 잡기 -> FAKER 로 데이터베이스 심기 -> 
+    2. apache2 를 재시작해주자.
+       SSH로 원격접속한 서버의 cmd 창에 sudo service apache2 restart 를 해주자.
+       이제 잘 되는지 확인해보자.
