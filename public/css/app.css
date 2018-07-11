@@ -10428,6 +10428,7 @@ main {
   margin: 0 auto;
   margin-top: 5rem;
   padding: 20rem auto;
+  margin-bottom: 5rem;
 }
 
 main p a {
@@ -10438,14 +10439,25 @@ main p a {
   background: white;
 }
 
+.jumbotron > .container > img {
+  width: 60%;
+}
+
 nav {
   font-family: 'Nanum Gothic';
+}
+
+.page {
+  position: fixed;
+  bottom: 7%;
+  right: 5%;
 }
 
 .posts_wrap {
   width: 97%;
   margin: 0 auto;
   padding-left: 2.5%;
+  overflow: hidden;
 }
 
 .posts_wrap > .posts {
@@ -10515,5 +10527,32 @@ img.card-img-top {
   width: 60%;
   min-width: 15rem;
   margin: 0 auto;
+}
+
+.footer {
+  background: #343a40;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3.5rem;
+}
+
+.footer > .words {
+  padding-top: 1.1%;
+  text-align: center;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.footer a {
+  color: #fff;
+}
+
+main.py-4 img {
+  display: block;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 5%;
 }
 

@@ -18,7 +18,7 @@
             </div>
         </div>              
         @endforeach
-        {{$posts->links()}}
+        <div class="page">{{$posts->links()}}</div>
     @else
         <p>No posts found</p>
     @endif

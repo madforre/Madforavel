@@ -8,7 +8,7 @@ use Illuminate\Http\Request; // brings in the request library
 class PagesController extends Controller
 {
     public function index(){
-        $title = 'This is the Laravel Application From the "Madforre"'; 
+        $title = 'This is the Laravel Application "Madforavel"'; 
         // return view('pages.index', compact('title')); 
         return view('pages.index')->with('title', $title);
         

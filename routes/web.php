@@ -15,7 +15,6 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
 
 /* CRUD구현을 위한 Resource 활용하기 (Restful API) */
 
