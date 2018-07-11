@@ -1,7 +1,5 @@
 body{
-    // background : #222222 !important;
-    // color : #eee !important;
-    background : rgb(236, 245, 237);
+    // background : #222222 !important; <-default
     padding-top : 1.2rem;
 }
 
@@ -152,9 +150,14 @@ img.card-img-top{
 
 // about
 
-main.py-4 img {
+.about img {
     display: block;
-    width : 75%;
+    width : 60%;
     margin : 0 auto;
-    margin-top : 5%;
+}
+
+.about_text {
+    margin-top : 2%;
+    text-align: center;
+    font-size : 1rem;
 }

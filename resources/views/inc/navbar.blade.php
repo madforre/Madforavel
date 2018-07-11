@@ -22,10 +22,10 @@
                   <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">References</a>
                   <div class="dropdown-menu" aria-labelledby="references">
                     <a class="dropdown-item" href="https://laravel.kr/docs">laravel.kr</a>
-                    <a class="dropdown-item" href="https://stackoverflow.com/">stackoverflow.com</a>
-                    <a class="dropdown-item" href="https://laracasts.com/">laracasts.com</a>
                     <a class="dropdown-item" href="https://stackoverflow.com/">l5.appkr.kr</a>
+                    <a class="dropdown-item" href="https://laracasts.com/">laracasts.com</a>
                     <a class="dropdown-item" href="https://www.lesstif.com/pages/viewpage.action?pageId=28606603">lessif.com</a>
+                    <a class="dropdown-item" href="https://stackoverflow.com/">stackoverflow.com</a>
                   </div>
                 </li>
               </ul>
