@@ -69,8 +69,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {   
         $activation_code = str_random(30).time();
-        Mail::to($data['email'])->send(new OrderShipped($activation_code));
         
+        Mail::to($data['email'])->send(new OrderShipped($activation_code));
+             
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -116,7 +117,8 @@ class RegisterController extends Controller
     */
     public function register(Request $request)
     {
-       $this->validator($request->all())->validate();
+       
+       $this->validator($request->all())->validate();   
 
        event(new Registered($user = $this->create($request->all())));
 
