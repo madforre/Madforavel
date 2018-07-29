@@ -9,6 +9,7 @@ Modern PHP + Laravel Portfolio - CRUD, Login &amp; Reset Password, Register, Val
 * Validation 을 이용하여 회원가입 및 로그인시 유효성 검사를 통해 인젝션 공격을 방어
 * 이메일 인증시 Hash 함수를 이용하여 이메일 인증 토큰을 암호화하였음
 * 권한을 가진 유저가 아닌경우 글삭제 및 수정이 불가능하게 되었음
+* SSH를 이용한 웹서버 원격 접속을 통하여  배포하였음
 
 ## Restful 리소스 컨트롤러
 * 내장된 RESTful 리소스 컨트롤러를 이용하여 CRUD 구현
