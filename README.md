@@ -9,7 +9,7 @@ Modern PHP + Laravel Portfolio - CRUD, Login &amp; Reset Password, Register, Val
 * Validation 을 이용하여 회원가입 및 로그인시 유효성 검사를 통해 인젝션 공격을 방어
 * 이메일 인증시 Hash 함수를 이용하여 이메일 인증 토큰을 암호화하였음
 * 권한을 가진 유저가 아닌경우 글삭제 및 수정이 불가능하게 되었음
-* SSH를 이용한 웹서버 원격 접속을 통하여  배포하였음
+* SSH를 이용한 웹서버 원격 접속 및 Git CMD를 통해 프로젝트를 배포하였음
 
 ## Restful 리소스 컨트롤러
 * 내장된 RESTful 리소스 컨트롤러를 이용하여 CRUD 구현
@@ -26,6 +26,7 @@ Modern PHP + Laravel Portfolio - CRUD, Login &amp; Reset Password, Register, Val
 ## 데이터베이스
 * PHP 라이브러리인 Faker를 이용하여 Database Seeding을 수월하게 하였음.
 * 쿼리빌더, Eloquent ORM을 이용하여 페이지네이션 및 CRUD를 구현하였음
+* Migration을 이용한 데이터베이스 버젼관리기능
 
 ## AWS
 * 아마존 웹서비스를 이용하여 웹서버, 데이터서버를 분리하였음.
