@@ -32,5 +32,8 @@ Modern PHP + Laravel Portfolio - CRUD, Login &amp; Reset Password, Register, Val
 
 ## 기타 기능
 * 라라벨 라이브러리 CK5 editor 를 사용하여 멋진 에디터를 이용한 글작성이 가능
+* Mailgun API를 이용, 회원가입시 이메일 인증을 거쳐야만 로그인이 가능하게 하였
 
-
+## P.S
+* 가격 정책 관련하여 현재는 이메일 인증서비스를 이용하려면 관리자가 직접 이메일을 수동으로 승인해야 합니다.
+  허용한 이메일만 인증이 가능하고, 아닌 경우에는 에러가 발생합니다.
