@@ -24,7 +24,7 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         // 정렬 및 페이지네이션
         $posts = Post::orderby('created_at','desc')->paginate(12);
         return view('posts.index')->with('posts', $posts);
@@ -42,7 +42,7 @@ class PostsController extends Controller
         if(auth()->user()->status == 0){
             return redirect('/posts')->with('error', '이메일 인증이 필요한 서비스입니다.');
         }
-        
+
         return view('posts.create');
     }
 
@@ -73,7 +73,7 @@ class PostsController extends Controller
             // Upload Image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'no_image.png'; // 만약 제대로된 파일 업로드가 아니라면 default image를 올린다.
+            $fileNameToStore = 'bg23.png'; // 만약 제대로된 파일 업로드가 아니라면 default image를 올린다.
         }
 
         // Create Post
@@ -96,7 +96,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return view('posts.show')->with('post', $post); // with 메소드의 첫번째 파라미터는 뷰에서 쓰일 변수명을 의미한다.         
+        return view('posts.show')->with('post', $post); // with 메소드의 첫번째 파라미터는 뷰에서 쓰일 변수명을 의미한다.
     }
 
     /**
@@ -144,7 +144,7 @@ class PostsController extends Controller
             // Upload Image
             $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
         } else {
-            $fileNameToStore = 'no_image.png'; // 만약 제대로된 파일 업로드가 아니라면 default image를 올린다.
+            $fileNameToStore = 'bg23.png'; // 만약 제대로된 파일 업로드가 아니라면 default image를 올린다.
         }
 
         // Update Post
