@@ -39,3 +39,7 @@ Modern PHP + Laravel Portfolio - CRUD, Login &amp; Reset Password, Register, Val
 ## P.S
 * 가격 정책 관련하여 현재는 이메일 인증서비스를 이용하려면 관리자가 직접 이메일을 수동으로 승인해야 합니다.
   허용한 이메일만 인증이 가능하고, 아닌 경우에는 에러가 발생합니다.
+  
+  
+------------
+AWS 프리티어 만료
