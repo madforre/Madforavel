@@ -813,3 +813,6 @@ Notification
     2. apache2 를 재시작해주자.
        SSH로 원격접속한 서버의 cmd 창에 sudo service apache2 restart 를 해주자.
        이제 잘 되는지 확인해보자.
+       
+       
+       123
